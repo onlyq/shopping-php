@@ -6,3 +6,5 @@ thinkphp
 .env
 .DS_Store
 /config/database.php
+/config/template.php
+/.travis.yml
