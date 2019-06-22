@@ -43,9 +43,8 @@
 				<div class="formControls col-xs-8 col-xs-offset-3">
 					<input class="input-text size-L" type="text" placeholder="验证码" id="my_captcha" style="width:150px;" value="">
 					<img src="{:captcha_src()}" alt="captcha" style="width: 200px;height: 50px" id="captcha" onclick="this.src='{:captcha_src()}?'+Math.random()"/>
-					
+					<div><span id="span_captcha"></span></div>
 				</div>
-				<span id="span_captcha"></span>
 			</div>
 			<div class="row cl">
 				<div class="formControls col-xs-8 col-xs-offset-3">
@@ -77,12 +76,13 @@
 	    var password=$("#password").val()
 	    $.ajax({
 	    	url:"{:url('login/loginAction')}",
-	    	type:'post',
+	    	
 	    	data:{
 	    		code:code,
 	    		name:name,
 	    		password:password
 	    	},
+	    	type:'post',
 	    	dataType:'json',
 	    	success:function(res) {
 	    		console.log(res)

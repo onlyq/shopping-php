@@ -1,17 +1,15 @@
 <?php
 namespace app\admin\controller;
-use think\Controller;
-use Db;
-class Index extends Controller
+use gmars\rbac\Rbac;
+class Index extends Common
 {
     public function index()
     {
-      return $this->fetch();
-    		
+      return $this->fetch();		
     }
-
-    public function hello($name = 'ThinkPHP5')
+    public function rbac()
     {
-        return 'hello,' . $name;
+      $rbac = new Rbac();
+      $rbac->createTable();		
     }
 }
